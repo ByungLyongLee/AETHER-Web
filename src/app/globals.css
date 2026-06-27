@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #08090c;
+  --card: #0f1117;
+  --border: #1c1f2e;
+  --signal: #00d4aa;
+  --live: #ff4444;
+  --gold: #f5a623;
+}
+
+body {
+  background-color: var(--bg);
+  color: #e2e8f0;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #00d4aa55; border-radius: 2px; }
+
+/* 시그널 파동 애니메이션 */
+@keyframes ripple {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.ripple-ring {
+  animation: ripple 2s ease-out infinite;
+}
+.ripple-ring-2 {
+  animation: ripple 2s ease-out infinite 0.7s;
+}
+
+/* 라이브 펄스 */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.live-dot { animation: live-pulse 1.2s ease-in-out infinite; }
+
+/* 확산 그라데이션 */
+.signal-gradient { background: linear-gradient(135deg, #00d4aa 0%, #0094ff 100%); }
+.live-gradient   { background: linear-gradient(135deg, #ff4444 0%, #ff8c00 100%); }
